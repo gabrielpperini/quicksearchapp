@@ -35,7 +35,7 @@ class Home extends Component{
 
                     if(this.state.search !== '' && data === "1" ){ 
                         this.props.navigation.navigate('Empresas', this.state.search)
-                    }else {
+                    }else if(data !== "1" && data !== null) {
                         alert(data);
                     }
                     console.log(data);

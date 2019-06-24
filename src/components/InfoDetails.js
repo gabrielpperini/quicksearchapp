@@ -31,7 +31,7 @@ class InfoDetails extends Component{
                 </View>
                 <View style={{
                     flex: 1,
-                    marginLeft: 20
+                    marginHorizontal: 10
                 }}>
                     {this.props.children}
                 </View>

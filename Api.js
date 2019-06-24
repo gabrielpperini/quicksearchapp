@@ -29,7 +29,7 @@ export default class Api {
               console.log('sucesso');
           })
           .catch(async err => {
-            console.log(err);
+            console.log(err,'getData()');
             this.requestError();
           });
         }
@@ -70,7 +70,7 @@ export default class Api {
         }
     })
     .catch(async err => {
-        console.log(err);
+        console.log(err, 'getDateUpdate');
         this.requestError();
         update =  false;
     });

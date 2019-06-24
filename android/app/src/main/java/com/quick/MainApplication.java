@@ -3,7 +3,9 @@ package com.quick;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.reactnativecommunity.webview.RNCWebViewPackage;
+import com.airbnb.android.react.maps.MapsPackage;
+import io.invertase.firebase.RNFirebasePackage;
+import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
 import com.reactnativecommunity.netinfo.NetInfoPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
@@ -27,7 +29,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new RNCWebViewPackage(),
+            new MapsPackage(),
+            new RNFirebasePackage(),
+            new ReactNativeOneSignalPackage(),
             new NetInfoPackage(),
             new VectorIconsPackage(),
             new RNGestureHandlerPackage()

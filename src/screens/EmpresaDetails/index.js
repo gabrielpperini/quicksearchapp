@@ -4,6 +4,7 @@ import  styles  from "../../styles"
 import InfoDetails from '../../components/InfoDetails';
 import Funcionamento from '../../components/Funcionamento';
 import IconReturn from '../../components/IconReturn';
+import MapView, { Marker } from 'react-native-maps';
 
 const dim = Dimensions.get("window");
 
@@ -11,6 +12,11 @@ class EmpresaDetails extends Component{
     
     constructor(props){
         super(props);
+    }
+
+    state = {
+        imageDisplay: {display: 'none'},
+        region: this.getInitialState()
     }
     
     static navigationOptions = {
@@ -44,10 +50,29 @@ class EmpresaDetails extends Component{
     //     terca_abre: "07:00",
     //     terca_fecha: "19:00",
     //     categoriaName: 'Restaurante',
-    //     descricao: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum v vlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsum'
+    //     descricao: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum v vlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsum',
+    //     coordenadas: {
+    //         lat: -29.1696801,
+    //         lng: -51.1632925,
+    //     },
     // }
 
     item = this.props.navigation.state.params;
+     
+    onRegionChange(region) {
+        this.setState({ region });
+    }
+
+    getInitialState() {
+        return {
+          region: {
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          },
+        };
+      }
 
     render(){
         console.log(this.props.navigation.state.params);
@@ -60,11 +85,15 @@ class EmpresaDetails extends Component{
                         <IconReturn fun={() => this.props.navigation.goBack()}/>
                         <Text style={styles.textCategoria}>{this.item.categoriaName}</Text>
                     </View>
-                    <View style={styles.whiteBox}>
+                    <View style={[styles.whiteBox,this.state.imageDisplay]}>
                         <Image source={{uri: this.item.foto }} style={{
                             width: dim.width - 80,
                             height: dim.width - 80,
-                        }} />
+                        }} 
+                        onLoadEnd={()=>{
+                            this.setState({imageDisplay: {display: 'flex'} });
+                        }}
+                        />
                     </View>
                     <View style={styles.whiteBox}>
                         <Text style={styles.textName}>{this.item.name}</Text>
@@ -89,6 +118,28 @@ class EmpresaDetails extends Component{
                     </InfoDetails>
                     <InfoDetails name={'Endereço'} icon={'map-marker'} >
                         <Text style={styles.infoDetailsChildren}>{this.item.local}</Text>
+                        <MapView
+                        style={{
+                            height: 200,
+                            marginTop: 10
+                        }}
+                        region={{
+                            latitude:  this.item.coordenadas.lat,
+                            longitude: this.item.coordenadas.lng,
+                            latitudeDelta: (200 * 0.01 )/( dim.width - 100 ),
+                            longitudeDelta: 0.01,
+                          }}
+                          onRegionChange={val => {
+                              console.log(val);
+                          }}
+                        >
+                        <Marker
+                            coordinate={{
+                                latitude:  this.item.coordenadas.lat,
+                                longitude: this.item.coordenadas.lng,
+                            }}
+                        />
+                        </MapView>
                     </InfoDetails>
                 </View>
             </ScrollView>

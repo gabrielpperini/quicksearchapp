@@ -7,12 +7,16 @@ export default styles = StyleSheet.create({
         backgroundColor: "white",
         borderTopColor: '#EC1D25',
         borderTopWidth: 8,
-        shadowOffset:{  width: 0,  height: 5,  },
+        shadowOffset: {  
+            width: 0,
+            height: 5,  
+        },
         shadowColor: 'black',
         shadowOpacity: 1.0,
         elevation: 5,
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        flexDirection: 'row'
     },
     bgHome: {
         flex: 1 , 

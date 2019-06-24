@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "390502014147",
+    "firebase_url": "https://quick-search-109fb.firebaseio.com",
+    "project_id": "quick-search-109fb",
+    "storage_bucket": "quick-search-109fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390502014147:android:632e85e6154b1e92",
+        "android_client_info": {
+          "package_name": "com.quicksearch.caxias"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "390502014147-brafp1btk918v13lpng7pk43rmcsp1ds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAory4VKmu0C4u7MHOQj7RhkYtBAfBCQvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "390502014147-brafp1btk918v13lpng7pk43rmcsp1ds.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
