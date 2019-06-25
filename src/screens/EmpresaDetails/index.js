@@ -133,12 +133,12 @@ class EmpresaDetails extends Component{
                               console.log(val);
                           }}
                         >
-                        <Marker
-                            coordinate={{
-                                latitude:  this.item.coordenadas.lat,
-                                longitude: this.item.coordenadas.lng,
-                            }}
-                        />
+                            <Marker
+                                coordinate={{
+                                    latitude:  this.item.coordenadas.lat,
+                                    longitude: this.item.coordenadas.lng,
+                                }}
+                            />
                         </MapView>
                     </InfoDetails>
                 </View>
