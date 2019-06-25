@@ -13,7 +13,7 @@
       android:theme="@style/AppTheme">
       <meta-data 
       android:name="com.google.android.geo.API_KEY"
-      android:value="AIzaSyDEm4lCrJE0xT80srwlhvKZzLoU-9RFzZY"
+      android:value="API_KEY"
       />
       <activity
         android:launchMode="singleTop"
