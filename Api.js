@@ -23,20 +23,20 @@ export default class Api {
           fetch('https://www.quicksearch.com.br/app/appData')
           .then((response) => response.json())
           .then(async (responseJson) => {
-              console.log(responseJson);
+              //console.log(responseJson);
               await AsyncStorage.setItem('dataEmpresas' , JSON.stringify(responseJson) );
               await AsyncStorage.setItem('errortNet' , '1');
-              console.log('sucesso');
+              //console.log('sucesso');
           })
           .catch(async err => {
-            console.log(err,'getData()');
+            //console.log(err,'getData()');
             this.requestError();
           });
         }
       }else{ // se não tiver net
-        console.log('offline');
+        //console.log('offline');
         let data = await AsyncStorage.getItem('dataEmpresas');
-        console.log(typeof data, data);
+        //console.log(typeof data, data);
         if(typeof data !== "string"){
           alert("Conecte-se a internet para baixar os dados");
           await AsyncStorage.setItem('errortNet' , 'Conecte-se a internet para baixar os dados' );
@@ -56,10 +56,10 @@ export default class Api {
         
         if(dateInApp){
             if(dateInApp === dataInSite){
-                console.log('iguais');
+                //console.log('iguais');
                 update = false;
             }else{
-                console.log('diferentes');
+                //console.log('diferentes');
                 await AsyncStorage.setItem('dateUpdate', dataInSite);
                 update = true;
             }
@@ -70,7 +70,7 @@ export default class Api {
         }
     })
     .catch(async err => {
-        console.log(err, 'getDateUpdate');
+        //console.log(err, 'getDateUpdate');
         this.requestError();
         update =  false;
     });
@@ -80,14 +80,14 @@ export default class Api {
   async firstTime(data){
     if(typeof data !== "string"){
         await AsyncStorage.setItem('errortNet', "Se for sua primeira vez no app, espere os dados serem baixados!");
-        console.log('data vazia');
-        console.log(data);
+        //console.log('data vazia');
+        //console.log(data);
     }
   }
 
   async requestError(){
     let data = await AsyncStorage.getItem('dataEmpresas');
-    // console.log(data);
+    //console.log(data);
     if(typeof data !== "string"){
       await AsyncStorage.setItem('errortNet' , 'O app não pode carregar, conecte a uma internet melhor!' );
       alert("O app não pode carregar, conecte a uma internet melhor!");
