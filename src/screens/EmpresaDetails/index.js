@@ -75,7 +75,7 @@ class EmpresaDetails extends Component{
       }
 
     render(){
-        console.log(this.props.navigation.state.params);
+        // console.log(this.props.navigation.state.params);
         return(
             <ScrollView 
             styles={styles.scrollEmpresas}
@@ -128,9 +128,6 @@ class EmpresaDetails extends Component{
                             longitude: this.item.coordenadas.lng,
                             latitudeDelta: (200 * 0.01 )/( dim.width - 100 ),
                             longitudeDelta: 0.01,
-                          }}
-                          onRegionChange={val => {
-                              console.log(val);
                           }}
                         >
                             <Marker

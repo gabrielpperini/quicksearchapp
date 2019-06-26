@@ -38,7 +38,7 @@ class Home extends Component{
                     }else if(data !== "1" && data !== null) {
                         alert(data);
                     }
-                    console.log(data);
+                    // console.log(data);
                 }
                 } />
             </ImageBackground>

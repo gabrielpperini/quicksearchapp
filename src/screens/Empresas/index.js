@@ -60,7 +60,7 @@ class Empresas extends Component{
             // console.log(responseJson)
             const data = await AsyncStorage.getItem('dataEmpresas');
             var busca = this.busca(JSON.parse(data));
-            console.log(busca);
+            // console.log(busca);
             this.setState({
                 results:busca.results,
                 data:JSON.parse(data),
@@ -148,9 +148,6 @@ class Empresas extends Component{
                     )}
                     keyExtractor={item => item.id}
                     extraData={this.state.results}
-                    onLayout={() => {
-                        
-                    }}
                     />
                 }
             </ScrollView>
