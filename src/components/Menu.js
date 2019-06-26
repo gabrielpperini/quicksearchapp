@@ -73,6 +73,7 @@ class Menu extends Component{
                     <ButtonMenu link={'assinatura'} title={'Assinatura'} />
                     <ButtonMenu link={'quickcard'} title={'Quick Card'} />
                     <ButtonMenu link={'admin'} title={'Login'} />
+                    <ButtonMenu link={'assets/app/politica_privacidade.pdf'} title={'Política de Privacidade'} />
                     <ButtonMenu link={'anuncie'} title={'Contato'} bg={true} />
                 </View>
             </Animated.View>
