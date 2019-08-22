@@ -42,15 +42,7 @@ class Menu extends Component{
 
         let translateStyle = { transform: [{ translateX: menuMoveX }] };
         return(
-            <Animated.View style={[{
-                width: dim.width * 0.75,
-                height: dim.height - 8,
-                backgroundColor: 'white',
-                position: 'absolute',
-                right: dim.width * -0.8,
-                top: 8,
-                elevation: 8
-            }, translateStyle]}>
+            <Animated.View style={[styles.menuAnimated, translateStyle]}>
             <TouchableWithoutFeedback onPress={this.props.onClose}>
                 <Icon
                 name={'remove'}

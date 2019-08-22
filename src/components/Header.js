@@ -22,7 +22,7 @@ class Header extends Component{
                         paddingHorizontal: 40
                     }}
                     />
-                </TouchableWithoutFeedback>}
+                </TouchableWithoutFeedback>
             </View>
         )
     }

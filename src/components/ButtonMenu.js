@@ -1,14 +1,20 @@
 import React, {Component} from 'react'
-import { TouchableOpacity , Linking , Text } from 'react-native'
+import { TouchableOpacity , Linking , Text , Platform } from 'react-native'
+import { withNavigation } from 'react-navigation';
 
 const ButtonMenu = ({
     link,
     title,
-    bg
+    bg,
+    navigation
 }) => {
     return(
         <TouchableOpacity onPress={() => {
-            Linking.openURL('http://quicksearch.com.br/' + link);
+            if(Platform.OS === 'ios'){
+                navigation.navigate('Web',{link: 'http://quicksearch.com.br/' + link})
+            }else{
+                Linking.openURL('http://quicksearch.com.br/' + link);
+            }
         }}
         style={{
             padding: 20,
@@ -27,4 +33,4 @@ const ButtonMenu = ({
     )
 }
 
-export default ButtonMenu
+export default withNavigation(ButtonMenu)

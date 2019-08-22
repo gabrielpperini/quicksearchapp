@@ -10,19 +10,25 @@ class Search extends Component{
     }
 
     state ={
-        val: this.props.val
+        val: this.props.val,
+        marginTop: 0
     }
 
-    infos = this.props.infos ? { display: 'flex' } : { display: 'none' };
+    infos = this.props.home ? { display: 'flex' } : { display: 'none' };
    
     render(){
         return(
-                <View>
+                <View style={{
+                    marginTop: this.props.home ? this.state.marginTop : 0
+                }}>
                     <View style={[styles.searchInputView, this.props.style]}>
                         <TextInput placeholder={this.props.placeholder} 
                         value={this.state.val}
                         onChangeText={(val) => {this.props.setState(val); this.setState({val: val})}}
-                        style={styles.searchInput}/>
+                        style={styles.searchInput}
+                        onFocus={() => {this.setState({marginTop: -75})}}
+                        onBlur={() => {this.setState({marginTop: 0})}}
+                        />
                         <Icon
                             name={'search'}
                             size={22}

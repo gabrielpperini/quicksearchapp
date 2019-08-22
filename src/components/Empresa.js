@@ -49,8 +49,8 @@ class Empresa extends Component{
             <Animated.View style={[styles.empresaCard ,transformStyle ]}>
                 <Text style={styles.empresaName}>{this.props.name}</Text>
                 {this.props.image ?
-                    <Image source={this.props.image} style={{borderRadius: 10, width: 150, height: 150, display: this.state.display }} 
-                        onLoadEnd={() => this.setState({display: 'flex'})}
+                    <Image source={this.props.image} style={{borderRadius: 10, width: 150, height: 150, display: `flex` }} 
+                        // onLoad={() => this.setState({display: 'flex'})}
                     />
                 :
                     <Image source={this.props.image} style={{display: 'none'}} /> 

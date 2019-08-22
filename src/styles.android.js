@@ -173,5 +173,14 @@ export default styles = StyleSheet.create({
     infoDetailsChildren: {
         color: '#152947',
         fontSize: 15
+    },
+    menuAnimated:{
+        width: dim.width * 0.75,
+        height: dim.height - 8,
+        backgroundColor: 'white',
+        position: 'absolute',
+        right: dim.width * -0.8,
+        top: 8,
+        elevation: 8
     }
 });

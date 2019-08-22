@@ -1,22 +1,26 @@
 import { StyleSheet , Dimensions } from 'react-native';
+import { isIphoneX } from './isIphoneX'
 const dim = Dimensions.get("window");
+
+const topBorder = isIphoneX() ? 36 : 18
 
 export default styles = StyleSheet.create({
     header:{
         height: 122,
         backgroundColor: "white",
         borderTopColor: '#EC1D25',
-        borderTopWidth: 8,
+        borderTopWidth: topBorder,
         shadowOffset: {  
             width: 0,
             height: 5,  
         },
         shadowColor: 'black',
-        shadowOpacity: 1.0,
+        shadowOpacity: .5,
         elevation: 5,
         justifyContent: 'flex-start',
         alignItems: 'center',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        zIndex:900,
     },
     bgHome: {
         flex: 1 , 
@@ -173,5 +177,15 @@ export default styles = StyleSheet.create({
     infoDetailsChildren: {
         color: '#152947',
         fontSize: 15
+    },
+    menuAnimated:{
+        width: dim.width * 0.75,
+        height: dim.height,
+        backgroundColor: 'white',
+        position: 'absolute',
+        right: dim.width * -0.8,
+        top: topBorder,
+        elevation: 8,
+        zIndex: 999,
     }
 });

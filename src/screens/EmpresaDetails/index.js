@@ -15,7 +15,7 @@ class EmpresaDetails extends Component{
     }
 
     state = {
-        imageDisplay: {display: 'none'},
+        imageDisplay: {display: 'flex'},
         region: this.getInitialState()
     }
     
@@ -90,9 +90,6 @@ class EmpresaDetails extends Component{
                             width: dim.width - 80,
                             height: dim.width - 80,
                         }} 
-                        onLoadEnd={()=>{
-                            this.setState({imageDisplay: {display: 'flex'} });
-                        }}
                         />
                     </View>
                     <View style={styles.whiteBox}>

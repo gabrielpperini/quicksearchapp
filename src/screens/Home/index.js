@@ -28,7 +28,7 @@ class Home extends Component{
             <ImageBackground source={assets.bg} style={styles.bgHome}>
                 <Search 
                 placeholder={'O que está buscando?'} 
-                infos={true}
+                home={true}
                 setState={this.setChildState.bind(this)}
                 search={async () => {
                     let data = await AsyncStorage.getItem('errortNet');
