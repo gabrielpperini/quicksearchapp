@@ -177,5 +177,15 @@ export default styles = StyleSheet.create({
     menuAnimated:{
         flex: 1,
         backgroundColor: 'white',
-    }
+    },
+    headerWeb: {
+        backgroundColor: 'white',
+        flexDirection: 'row'
+    },
+    textHeaderWeb: {
+        textAlignVertical: 'center',
+        marginLeft: 10,
+        fontSize:  20,
+        color: 'Black'
+    },
 });

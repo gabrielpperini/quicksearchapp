@@ -23,16 +23,25 @@ const AppNavigator = createStackNavigator({
 
 AppWithMenu = createDrawerNavigator({
   Main: AppNavigator,
-  Web: {
-    screen: Web,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-    }
-  }
 },{
   initialRouteName: 'Main',
   contentComponent: Menu,
   drawerPosition: "right"
 })
 
-export default Root = createAppContainer(AppWithMenu);
+AppFinal = createStackNavigator({
+  App: AppWithMenu,
+  Web: {
+      screen: Web
+    }
+  },
+  {
+    initialRouteName: 'App',
+    defaultNavigationOptions: {
+      header: null
+    },
+    mode: 'modal'
+  }
+);
+
+export default Root = createAppContainer(AppFinal);

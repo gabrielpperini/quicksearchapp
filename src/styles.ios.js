@@ -182,10 +182,21 @@ export default styles = StyleSheet.create({
         width: dim.width * 0.75,
         height: dim.height,
         backgroundColor: 'white',
-        // position: 'absolute',
-        // right: dim.width * -0.8,
-        // top: topBorder,
+        marginTop: isIphoneX() ? 36 : 0,
         elevation: 8,
         zIndex: 999,
-    }
+    },
+    headerWeb: {
+        backgroundColor: 'white',
+        flexDirection: 'row',
+        borderTopColor: '#000',
+        borderTopWidth: topBorder
+    },
+    textHeaderWeb: {
+        alignSelf: 'center',
+        marginLeft: 10,
+        fontSize:  20,
+        color: 'black',
+
+    },
 });

@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
-import {WebView , ActivityIndicator,View,Text,Dimensions} from 'react-native'
+import {WebView , ActivityIndicator,View,Text,Platform} from 'react-native'
 import { HeaderBackButton } from 'react-navigation';
+import styles from '../styles';
 
-const dim = Dimensions.get("window");
+const ActivityIndicatorSize = (Platform.OS === 'ios') ? 'large' : 70;
 
 class Web extends Component{
     
@@ -15,7 +16,7 @@ class Web extends Component{
         return (
           <ActivityIndicator
             color='#EC1D25'
-            size={70}
+            size={ActivityIndicatorSize}
             style={{
                 flex: 1,
                 justifyContent: 'center',
@@ -28,17 +29,9 @@ class Web extends Component{
         console.log(this.props.navigation.getParam('link'));
         return(
             <View style={{flex: 1}}>
-                <View style={{
-                    backgroundColor: 'white',
-                    flexDirection: 'row'
-                }}>
+                <View style={[styles.headerWeb]}>
                     <HeaderBackButton onPress={() => {this.props.navigation.navigate('Main')}}/>
-                    <Text style={{
-                        textAlignVertical: 'center',
-                        marginLeft: 10,
-                        fontSize:  20,
-                        color: 'Black'
-                    }}>{this.props.navigation.getParam('title')}</Text>
+                    <Text style={styles.textHeaderWeb}>{this.props.navigation.getParam('title')}</Text>
                 </View>
                 <WebView
                 useWebKit={true} 
