@@ -175,12 +175,7 @@ export default styles = StyleSheet.create({
         fontSize: 15
     },
     menuAnimated:{
-        width: dim.width * 0.75,
-        height: dim.height - 8,
+        flex: 1,
         backgroundColor: 'white',
-        position: 'absolute',
-        right: dim.width * -0.8,
-        top: 8,
-        elevation: 8
     }
 });

@@ -182,9 +182,9 @@ export default styles = StyleSheet.create({
         width: dim.width * 0.75,
         height: dim.height,
         backgroundColor: 'white',
-        position: 'absolute',
-        right: dim.width * -0.8,
-        top: topBorder,
+        // position: 'absolute',
+        // right: dim.width * -0.8,
+        // top: topBorder,
         elevation: 8,
         zIndex: 999,
     }

@@ -13,7 +13,6 @@ class Empresas extends Component{
     }
     
     static navigationOptions = {
-        header: null
     }
 
     state ={
@@ -119,7 +118,7 @@ class Empresas extends Component{
             styles={styles.scrollEmpresas}
             >
                 <View style={styles.empresasSearch}>
-                    <IconReturn fun={() => this.props.navigation.goBack()}/>
+                    <IconReturn fun={() => this.props.navigation.goBack()} color={'white'}/>
                     <Search 
                     style={{opacity: 1}} 
                     val={this.props.navigation.state.params} 

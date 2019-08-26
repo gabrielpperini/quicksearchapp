@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { View,  Image , TouchableWithoutFeedback } from 'react-native'
+import { View,  Image , TouchableOpacity } from 'react-native'
 import  assets  from "../../assets"
 import  styles  from "../styles"
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -9,8 +9,8 @@ class Header extends Component{
         return(
             <View style={styles.header}>
                 <Image source={assets.logo} style={{marginLeft: 10}} />   
-                <TouchableWithoutFeedback onPress={() => {
-                    this.props.setMenu(true)
+                <TouchableOpacity onPress={() => {
+                    this.props.navigation.openDrawer();
                 }}
                 >
                     <Icon
@@ -22,7 +22,7 @@ class Header extends Component{
                         paddingHorizontal: 40
                     }}
                     />
-                </TouchableWithoutFeedback>
+                </TouchableOpacity>
             </View>
         )
     }

@@ -38,31 +38,11 @@ export default class App extends Component {
     console.log("IDS Push:", push);
   }
 
-  state = {
-    menuVisibility: false,
-  }
-
-  setMenuVisibility = (val) => {
-    this.setState({menuVisibility: val})
-  }
-
   render() {
     console.disableYellowBox = true;
     return (
       <View style={{flex: 1}}>
-        
-        <Header style={{flex: 1}} 
-        setMenu={this.setMenuVisibility.bind(this)} 
-        />
         <Root style={{flex: 1}} />
-        <Menu 
-            visible={this.state.menuVisibility} 
-            onClose={() => {
-                this.setState({
-                    menuVisibility: false
-                });
-            }} 
-        /> 
       </View>
     )
   }

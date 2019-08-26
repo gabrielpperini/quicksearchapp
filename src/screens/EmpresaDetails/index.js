@@ -20,7 +20,6 @@ class EmpresaDetails extends Component{
     }
     
     static navigationOptions = {
-        header: null
     }
     
     // item = {
@@ -82,7 +81,7 @@ class EmpresaDetails extends Component{
             >
                 <View style={styles.viewDetails}>
                     <View style={styles.viewCategoria}>
-                        <IconReturn fun={() => this.props.navigation.goBack()}/>
+                        <IconReturn fun={() => this.props.navigation.goBack()} />
                         <Text style={styles.textCategoria}>{this.item.categoriaName}</Text>
                     </View>
                     <View style={[styles.whiteBox,this.state.imageDisplay]}>

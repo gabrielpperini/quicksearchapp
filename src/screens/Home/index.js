@@ -12,7 +12,6 @@ class Home extends Component{
     }
     
     static navigationOptions = {
-        header: null
     }
     state ={
         search: '',

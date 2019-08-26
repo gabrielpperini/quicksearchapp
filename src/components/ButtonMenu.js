@@ -1,36 +1,32 @@
 import React, {Component} from 'react'
-import { TouchableOpacity , Linking , Text , Platform } from 'react-native'
+import { TouchableOpacity , Text } from 'react-native'
 import { withNavigation } from 'react-navigation';
 
-const ButtonMenu = ({
-    link,
-    title,
-    bg,
-    navigation
-}) => {
-    return(
-        <TouchableOpacity onPress={() => {
-            if(Platform.OS === 'ios'){
-                navigation.navigate('Web',{link: 'http://quicksearch.com.br/' + link})
-            }else{
-                Linking.openURL('http://quicksearch.com.br/' + link);
-            }
-        }}
-        style={{
-            padding: 20,
-            marginTop: bg ? 20 : 5,
-            backgroundColor: bg ? 'black' : 'transparent',
-            borderRadius: 10
-        }}
-        >
-            <Text style={{
-                color: bg ? 'white' : 'black',
-                fontSize: 20,
-                textAlign: 'center',
-                textAlignVertical: 'center'
-            }}>{title}</Text>
-        </TouchableOpacity>
-    )
+class ButtonMenu extends Component {
+    render(){
+        return(
+            <TouchableOpacity onPress={() => {
+                    this.props.navigation.navigate('Web',{
+                        link: 'https://www.quicksearch.com.br/' + this.props.link,
+                        title: this.props.title
+                    })
+            }}
+            style={{
+                padding: 20,
+                marginTop: this.props.bg ? 20 : 5,
+                backgroundColor: this.props.bg ? 'black' : 'transparent',
+                borderRadius: 10
+            }}
+            >
+                <Text style={{
+                    color: this.props.bg ? 'white' : 'black',
+                    fontSize: 20,
+                    textAlign: 'center',
+                    textAlignVertical: 'center'
+                }}>{this.props.title}</Text>
+            </TouchableOpacity>
+        )
+    }
 }
 
 export default withNavigation(ButtonMenu)
