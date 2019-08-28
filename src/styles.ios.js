@@ -25,7 +25,7 @@ export default styles = StyleSheet.create({
     bgHome: {
         flex: 1 , 
         justifyContent: 'center', 
-        alignItems: 'center' 
+        alignItems: 'center',
     },
     searchInputView: {
         width: dim.width - 40 , 

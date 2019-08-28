@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { View, TouchableOpacity , Dimensions , Animated , Easing , Linking , Text } from 'react-native'
+import { View, TouchableOpacity , Dimensions , Platform} from 'react-native'
 import  assets  from "../../assets"
 import  styles  from "../styles"
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -38,7 +38,7 @@ class Menu extends Component{
                     <ButtonMenu link={'sobre'} title={'Sobre Nós'} />
                     <ButtonMenu link={'assinatura'} title={'Assinatura'} />
                     <ButtonMenu link={'quickcard'} title={'Quick Card'} />
-                    <ButtonMenu link={'admin'} title={'Login'} />
+                    {Platform.OS === 'ios' ? null : <ButtonMenu link={'admin'} title={'Login'} />}
                     <ButtonMenu link={'assets/app/politica_privacidade.pdf'} title={'Política de Privacidade'} />
                     <ButtonMenu link={'anuncie'} title={'Contato'} bg={true} />
                 </View>
